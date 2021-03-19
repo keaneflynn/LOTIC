@@ -28,6 +28,8 @@ def main():
             )
     interpreter.allocate_tensors()
 
+    print("Allocated tensors")
+
     #frame_classifier = MockFrameClassifier()
     frame_classifier = FrameClassifier(interpreter, args.thresh)
     video_classifier = VideoClassifier(
@@ -39,8 +41,15 @@ def main():
     )
     signal(SIGINT, input_stream.stop_vid)
     reader_thread = Thread(target=input_stream.start)
+    
+    print('Starting video reader thread')
     reader_thread.start()
+    print('Video reader thread started')
+
     video_classifier.run()
+    reader_thread.join()
+
+    print("Done!")
 
 if __name__ == '__main__':
     main()

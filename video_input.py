@@ -11,13 +11,14 @@ class VideoInput:
             self.vid = cv2.VideoCapture(vid_dev_no)
             self.is_live = True
         
-        self.__queue = Queue(10000)
+        self.__queue = Queue(300)
 
     def start(self):
         numread = 0
         while True:
             ok, frame = self.vid.read()
             if not ok:
+                print('Finished reading all frames')
                 return
             numread += 1
             self.__queue.put(frame)

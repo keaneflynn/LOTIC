@@ -40,7 +40,6 @@ class VideoClassifier:
         while frame is not None:
             outfile_idx += 1
             outfile = os.path.join(self.output_dir, f'{self.fname_prefix}_{outfile_idx}.mp4')
-            vid_out = cv2.VideoWriter(outfile, fourcc=cv2.VideoWriter_fourcc(*'mp4v'), fps=int(self.frame_rate), frameSize=dims)
             started = False
             while frame is not None:
                 self.num_read += 1
@@ -56,6 +55,7 @@ class VideoClassifier:
                             break
                 else:
                     if found:
+                        vid_out = cv2.VideoWriter(outfile, fourcc=cv2.VideoWriter_fourcc(*'mp4v'), fps=int(self.frame_rate), frameSize=dims)
                         started = True
                         self.update_time_offset()
                         vid_out.write(classified_frame)
