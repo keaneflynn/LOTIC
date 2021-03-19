@@ -5,14 +5,10 @@ class FrameClassifier:
     def __init__(self, interpreter, min_conf_threshold):
         self.interpreter = interpreter
         input_details = self.interpreter.get_input_details()
-        output_details = self.interpreter.get_output_details()
         self.width = input_details[0]['shape'][2]
         self.height = input_details[0]['shape'][1]
         self.index = input_details[0]['index']
-        self.bounding_box_tensor_idx = output_details[0]['index']
-        self.class_tensor_idx = output_details[1]['index']
-        self.confidence_tensor_idx = output_details[2]['index']
-        self.min_conf_thresh = min_conf_thresh
+        self.min_conf_threshold = min_conf_threshold
 
     def classify(self, frame):
         img_h = len(frame)
@@ -24,9 +20,15 @@ class FrameClassifier:
         self.interpreter.set_tensor(self.index, input_data)
         self.interpreter.invoke()
 
-        boxes = interpreter.get_tensor(output_details[0]['index'])[0] # Bounding box coordinates of detected objects
-        classes = interpreter.get_tensor(output_details[1]['index'])[0] # Class index of detected objects
-        scores = interpreter.get_tensor(output_details[2]['index'])[0] # Confidence of detected objects
+        output_details = self.interpreter.get_output_details()
+
+        boxes = self.interpreter.get_tensor(output_details[0]['index'])[0] # Bounding box coordinates of detected objects
+        try:
+            classes = self.interpreter.get_tensor(output_details[1]['index'])[0] # Class index of detected objects
+        except IndexError:
+            import pdb
+            pdb.set_trace()
+        scores = self.interpreter.get_tensor(output_details[2]['index'])[0] # Confidence of detected objects
 
         found = False
 
@@ -37,10 +39,10 @@ class FrameClassifier:
 
                 # Get bounding box coordinates and draw box
                 # Interpreter can return coordinates that are outside of image dimensions, need to force them to be within image using max() and min()
-                ymin = int(max(1,(boxes[i][0] * self.img_h)))
-                xmin = int(max(1,(boxes[i][1] * self.img_w)))
-                ymax = int(min(self.img_h,(boxes[i][2] * self.img_h)))
-                xmax = int(min(self.img_w,(boxes[i][3] * self.img_w)))
+                ymin = int(max(1,(boxes[i][0] * img_h)))
+                xmin = int(max(1,(boxes[i][1] * img_w)))
+                ymax = int(min(img_h,(boxes[i][2] * img_h)))
+                xmax = int(min(img_w,(boxes[i][3] * img_w)))
                 
                 cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), (10, 255, 0), 4)
 

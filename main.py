@@ -16,7 +16,6 @@ def main():
     parser.add_argument('--tolerance', default=10, help='Tolerance time (seconds)', type=int)
     parser.add_argument('--model-file', type=str)
     args = parser.parse_args()
-    print(args)
 
     if args.video_file != '':
         input_stream = VideoInput(filename=args.video_file)
@@ -27,9 +26,10 @@ def main():
             model_path=args.model_file,
             experimental_delegates=[load_delegate('libedgetpu.so.1.0')]
             )
+    interpreter.allocate_tensors()
 
     #frame_classifier = MockFrameClassifier()
-    frame_classifier = FrameClassifier(interpreter, thresh)
+    frame_classifier = FrameClassifier(interpreter, args.thresh)
     video_classifier = VideoClassifier(
             input_stream,
             frame_classifier,
