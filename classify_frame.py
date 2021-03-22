@@ -27,7 +27,8 @@ class FrameClassifier:
         try:
             classes = self.interpreter.get_tensor(output_details[1]['index'])[0] # Class index of detected objects
         except IndexError:
-            
+                import pdb
+                pdb.set_trace()
         scores = self.interpreter.get_tensor(output_details[2]['index'])[0] # Confidence of detected objects
 
         found = False
