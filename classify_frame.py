@@ -1,6 +1,7 @@
 ##Import Dependencies##
 import cv2
 import numpy as np
+from datetime import datetime
 
 class FrameClassifier:
     def __init__(self, interpreter, min_conf_threshold):
@@ -24,10 +25,12 @@ class FrameClassifier:
         output_details = self.interpreter.get_output_details()
 
         boxes = self.interpreter.get_tensor(output_details[0]['index'])[0] # Bounding box coordinates of detected objects
-        
+
         classes = self.interpreter.get_tensor(output_details[1]['index'])[0] # Class index of detected objects
-        
+
         scores = self.interpreter.get_tensor(output_details[2]['index'])[0] # Confidence of detected objects
+
+        date_time = str(datetime.now())
 
         found = False
 
@@ -42,7 +45,13 @@ class FrameClassifier:
                 xmin = int(max(1,(boxes[i][1] * img_w)))
                 ymax = int(min(img_h,(boxes[i][2] * img_h)))
                 xmax = int(min(img_w,(boxes[i][3] * img_w)))
-                
+
                 cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), (10, 255, 0), 4)
+
+                timestamp_on_frame = cv2.putText(frame, date_time, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
+
+            else:
+
+                timestamp_on_frame
 
         return frame, found
