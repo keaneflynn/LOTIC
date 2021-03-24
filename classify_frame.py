@@ -24,11 +24,9 @@ class FrameClassifier:
         output_details = self.interpreter.get_output_details()
 
         boxes = self.interpreter.get_tensor(output_details[0]['index'])[0] # Bounding box coordinates of detected objects
-        try:
-            classes = self.interpreter.get_tensor(output_details[1]['index'])[0] # Class index of detected objects
-        except IndexError:
-                import pdb
-                pdb.set_trace()
+        
+        classes = self.interpreter.get_tensor(output_details[1]['index'])[0] # Class index of detected objects
+        
         scores = self.interpreter.get_tensor(output_details[2]['index'])[0] # Confidence of detected objects
 
         found = False
