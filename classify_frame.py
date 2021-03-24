@@ -50,8 +50,4 @@ class FrameClassifier:
 
                 timestamp_on_frame = cv2.putText(frame, date_time, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
 
-            else:
-
-                timestamp_on_frame
-
         return frame, found

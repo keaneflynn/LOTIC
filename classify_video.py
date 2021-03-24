@@ -6,7 +6,7 @@ class VideoClassifier:
     def __init__(
             self,
             input_stream,
-            frame_classifier, 
+            frame_classifier,
             output_dir,
             fname_prefix,
             tolerance_secs=10,
@@ -61,4 +61,3 @@ class VideoClassifier:
                         vid_out.write(classified_frame)
                     else:
                         pass
-
