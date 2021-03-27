@@ -1,3 +1,5 @@
+##place file in following directory: /etc/systemd/system/ ##
+
 [Unit]
 Description=LOTIC Machine Learning Program
 After=multi-user.target
