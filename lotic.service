@@ -1,0 +1,17 @@
+##Place file in following destination: /lib/systemd/system/ ##
+
+[Unit]
+Description=LOTIC Machine Learning Program
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/LOTIC/main.py --output-dir /media/pi/FISHSTICKS/vid_out --tolerance 3 --model-file /home/pi/LOTIC/models/detect_edgetpu.tflite
+WorkingDirectory=/home/pi/LOTIC
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+User=pi
+
+[Install]
+WantedBy=multi-user.target
