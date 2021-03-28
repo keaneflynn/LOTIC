@@ -2,7 +2,7 @@ from threading import Thread
 from classify_frame import FrameClassifier
 from classify_video import VideoClassifier
 from video_input import VideoInput
-from mock_classify_frame import MockFrameClassifier
+#from mock_classify_frame import MockFrameClassifier
 from signal import signal, SIGINT
 from argparse import ArgumentParser
 from tflite_runtime.interpreter import Interpreter, load_delegate
@@ -15,7 +15,12 @@ def main():
     parser.add_argument('--thresh', default=.5, help="confidence threshold (float)", type=float)
     parser.add_argument('--tolerance', default=10, help='Tolerance time (seconds)', type=int)
     parser.add_argument('--model-file', type=str)
+    parser.add_argument('--labels-file', default='./labels.txt', type=str)
     args = parser.parse_args()
+
+    with open(args.labels_file, 'r') as lf:
+        # todo: possible that only first ??? line needs to be removed
+        labels = [line.strip() for line in lf]
 
     if args.video_file != '':
         input_stream = VideoInput(filename=args.video_file)
@@ -31,7 +36,7 @@ def main():
     print("Allocated tensors")
 
     #frame_classifier = MockFrameClassifier()
-    frame_classifier = FrameClassifier(interpreter, args.thresh)
+    frame_classifier = FrameClassifier(interpreter, args.thresh, labels)
     video_classifier = VideoClassifier(
             input_stream,
             frame_classifier,

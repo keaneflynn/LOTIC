@@ -38,4 +38,3 @@ class VideoInput:
 
     def stop_vid(self, a, b):
         self.vid.release()
-
