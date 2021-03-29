@@ -7,13 +7,14 @@ This currently makes use of the following hardware (however we intend to update 
   * Raspbian OS
 * Raspberry Pi Camera Unit (although it should work with any camera input (untested) )
 * Google Coral TPU
+* Some additional storage unit (although a large capacity SD card in the RasPi should suffice)
 * Some sort of active cooling for CPU (imperative if raspi is overclocked)
 
 
 ## Spec
-This program takes in a .tflite file and a video file. It reads the video's frames
+This program takes in a .tflite file (converted into an edgetpu compatible .tflite file) and a video file or video stream. It reads the video's frames
 and, upon identifying an object based on the tflite file, starts writing the output
-to a new video file. Once the object has left the frame (for a (configurable) while),
+to a new video and json file. Once the object has left the frame for a configurable amount of time,
 it closes that file. When it sees an object again, the process repeats.
 
 ## Run It
