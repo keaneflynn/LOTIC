@@ -1,0 +1,5 @@
+parr_okisutch
+parr_omykiss
+smolt_okisutch
+yoy_okisutch
+yoy_omykiss
