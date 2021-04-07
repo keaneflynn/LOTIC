@@ -28,7 +28,7 @@ def main():
         input_stream = VideoInput()
 
     interpreter = Interpreter(
-            model_path=args.model_file)
+            model_path=args.model_file,
             experimental_delegates=[load_delegate('libedgetpu.so.1.0')]
             )
     interpreter.allocate_tensors()
