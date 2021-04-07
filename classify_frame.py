@@ -40,17 +40,20 @@ class FrameClassifier:
         for i in range(len(scores)):
             if ((scores[i] > self.min_conf_threshold) and (scores[i] <= 1.0)):
 
-                # Get bounding box coordinates and draw box
-                # Interpreter can return coordinates that are outside of image dimensions, need to force them to be within image using max() and min()
+                #Get bounding box coordinates and draw box
                 ymin = int(max(1,(boxes[i][0] * img_h)))
                 xmin = int(max(1,(boxes[i][1] * img_w)))
                 ymax = int(min(img_h,(boxes[i][2] * img_h)))
                 xmax = int(min(img_w,(boxes[i][3] * img_w)))
-
-                obj_name = self.labels[int(classes[i])]
-                          
-                classification.items += [Item(obj_name)]
-
                 cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), (10, 255, 0), 4)
 
+                obj_name = self.labels[int(classes[i])]
+                classification.items += [Item(obj_name)]
+
+                #Drawing label (?)
+                labelSize, baseLine = cv2.getTextSize(obj_name, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 2)
+                label_ymin = max(ymin, labelSize[1] + 10)
+                cv2.rectangle(frame, (xmin, label_ymin-labelSize[1]-10), (xmin+labelSize[0], label_ymin+baseLine-10), (255, 255, 255), cv2.FILLED)
+                cv2.putText(frame, obj_name, (xmin, label_ymin-7), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
+                
         return classification
