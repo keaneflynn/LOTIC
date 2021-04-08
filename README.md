@@ -35,6 +35,7 @@ $ python main.py -h
 - `classify_video.py`: classification at video level; video output details
 - `classify_frame.py`: classification at frame level; used by `classify_video.py`
 - `models`: directory containing .tflite files (useful for testing)
+- `classification.py`: classification for .json file output; used by `classify_frame.py`
 
 ## Known Issue
 
