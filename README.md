@@ -36,6 +36,7 @@ $ python main.py -h
 - `classify_frame.py`: classification at frame level; used by `classify_video.py`
 - `models`: directory containing .tflite files (useful for testing)
 - `classification.py`: classification for .json file output; used by `classify_frame.py`
+- `lotic.service`: a service file to be placed in systemd of the RasPi to allow the program to run on boot or reboot on failure
 
 ## Known Issue
 
