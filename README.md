@@ -34,8 +34,8 @@ $ python main.py -h
   - also has method for reading from queue to be used by main thread
 - `classify_video.py`: classification at video level; video output details
 - `classify_frame.py`: classification at frame level; used by `classify_video.py`
-- `models`: directory containing .tflite files (useful for testing)
 - `classification.py`: classification for .json file output; used by `classify_frame.py`
+- `models`: directory containing .tflite files (useful for testing)
 - `lotic.service`: a service file to be placed in systemd of the RasPi to allow the program to run on boot or reboot on failure
 
 ## Known Issue
