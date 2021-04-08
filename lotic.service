@@ -8,8 +8,8 @@ After=multi-user.target
 Type=idle
 ExecStart=/usr/bin/python3 /home/pi/LOTIC/main.py --output-dir /media/pi/FISHSTICKS/vid_out --tolerance 3 --model-file /home/pi/LOTIC/models/detect_edgetpu.tflite --labels-file models /home/pi/LOTIC/models/labelmap.txt
 WorkingDirectory=/home/pi/LOTIC
-StandardOutput=inherit
-StandardError=inherit
+StandardOutput=file:/home/pi/main_output.log
+StandardError=file:/home/pi/error_file.log
 Restart=on-failure
 User=pi
 
