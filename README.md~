@@ -1,9 +1,6 @@
 # LOTIC Introduction
 Welcome to LOTIC (Lightweight Object Tracking Image Capturer)! This program has been designed for underwater use with a Tensorflow Lite object detection model to record out migrating juvenile salmonids, however with slight tweaks it can be reconfigured for any object detection project. The use of the following files and scripts will result in a Raspberry Pi computer that, on startup, will perform live object detection at over 20fps. The output from this object detection model is a video record with a bounding box around your object of interest with a timestamp as well as an additional  file containing time of first observation, species ID, duration in frame, and count of total observations. For ease of back-end data configuration, this file is output in .json format. 
 
-##Example Output
-![LOTIC performing salmonid identification on a tributary of the South Fork Eel River](https://github.com/keaneflynn/LOTIC/blob/main/media/fish.gif)
-
 ## Necessary Hardware
 This currently makes use of the following hardware (however we intend to update it with whatever more efficient hardware becomes available):
 * Raspberry Pi 4 B
