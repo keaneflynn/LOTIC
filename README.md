@@ -8,7 +8,7 @@ Welcome to LOTIC (Lightweight Object Tracking Image Capturer)! This program has 
 This currently makes use of the following hardware (however we intend to update it with whatever more efficient hardware becomes available):
 * Raspberry Pi 4 B
   * Raspbian OS
-* Raspberry Pi Camera Unit (although it should work with any camera input (untested) )
+* Raspberry Pi Camera Unit (although it should work with any auxiliary camera input (untested) )
 * Google Coral TPU
 * Some additional storage unit (although a large capacity SD card in the RasPi should suffice)
 * Some sort of active cooling for CPU (imperative if raspi is overclocked)
