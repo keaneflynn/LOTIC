@@ -1,14 +1,14 @@
 # LOTIC Introduction
 Welcome to LOTIC (Lightweight Object Tracking Image Capturer)! This program has been designed for underwater use with a Tensorflow Lite object detection model to record out migrating juvenile salmonids, however with slight tweaks it can be reconfigured for any object detection project. The use of the following files and scripts will result in a Raspberry Pi computer that, on startup, will perform live object detection at over 20fps. The output from this object detection model is a video record with a bounding box around your object of interest with a timestamp as well as an additional  file containing time of first observation, species ID, duration in frame, and count of total observations. For ease of back-end data configuration, this file is output in .json format. 
 
-##Example Output
+## Example Output
 ![LOTIC performing salmonid identification on a tributary of the South Fork Eel River](https://github.com/keaneflynn/LOTIC/blob/main/media/fish.gif)
 
 ## Necessary Hardware
 This currently makes use of the following hardware (however we intend to update it with whatever more efficient hardware becomes available):
 * Raspberry Pi 4 B
   * Raspbian OS
-* Raspberry Pi Camera Unit (although it should work with any camera input (untested) )
+* Raspberry Pi Camera Unit (although it should work with any auxiliary camera input (untested) )
 * Google Coral TPU
 * Some additional storage unit (although a large capacity SD card in the RasPi should suffice)
 * Some sort of active cooling for CPU (imperative if raspi is overclocked)
@@ -34,7 +34,9 @@ $ python main.py -h
   - also has method for reading from queue to be used by main thread
 - `classify_video.py`: classification at video level; video output details
 - `classify_frame.py`: classification at frame level; used by `classify_video.py`
+- `classification.py`: classification for .json file output; used by `classify_frame.py`
 - `models`: directory containing .tflite files (useful for testing)
+- `lotic.service`: a service file to be placed in systemd of the RasPi to allow the program to run on boot or reboot on failure
 
 ## Known Issue
 
