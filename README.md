@@ -33,7 +33,7 @@ This currently makes use of the following hardware (however we intend to update 
 
 ![Video weir submersible tube placement](https://github.com/keaneflynn/LOTIC/blob/main/media/VideoWeir.jpeg)
 
-![LOTIC submersible tube component containing computer and camera](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTICtube.jpeg)
+![LOTIC submersible tube component containing computer and camera](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTICtube.png)
 
 ![Lock box containing car batteries, excess wiring, and charge controller from solar panel](https://github.com/keaneflynn/LOTIC/blob/main/media/LockBox.jpg)
 
