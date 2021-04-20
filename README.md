@@ -1,8 +1,17 @@
-# LOTIC Introduction
+# LOTIC
+Open source code for fisheries research developed by Keane Flynn, Ryan Flynn, and Gabriel Rossi (2021)
+
+## Introduction
 Welcome to LOTIC (Lightweight Object Tracking Image Capturer)! This program has been designed for underwater use with a Tensorflow Lite object detection model to record out migrating juvenile salmonids, however with slight tweaks it can be reconfigured for any object detection project. The use of the following files and scripts will result in a Raspberry Pi computer that, on startup, will perform live object detection at over 20fps. The output from this object detection model is a video record with a bounding box around your object of interest with a timestamp as well as an additional  file containing time of first observation, species ID, duration in frame, and count of total observations. For ease of back-end data configuration, this file is output in .json format. 
 
 ## Example Output
 ![LOTIC performing salmonid identification on a tributary of the South Fork Eel River](https://github.com/keaneflynn/LOTIC/blob/main/media/fish.gif)
+
+LOTIC performing salmonid identification on a tributary of the South Fork Eel River
+
+![LOTIC performing adult salmonid identification on the mainstem Russian River](https://github.com/keaneflynn/LOTIC/blob/main/media/mirabelSample.GIF)
+
+LOTIC performing adult salmonid identification on the mainstem Russian River
 
 ## Necessary Hardware
 This currently makes use of the following hardware (however we intend to update it with whatever more efficient hardware becomes available):
@@ -12,6 +21,23 @@ This currently makes use of the following hardware (however we intend to update 
 * Google Coral TPU
 * Some additional storage unit (although a large capacity SD card in the RasPi should suffice)
 * Some sort of active cooling for CPU (imperative if raspi is overclocked)
+* Blue Robotics 4" tube (aluminum tube helps with cooling while submerged), clear face plate, potted back plate, and necessary sealing gaskets
+* Two waterproof cat 6 cables to run from battery storage box to submersed computer unit (used for powering and data transfer)
+* Buck Converter 24 volt to 5 volt 3 amp to power RasPi (wired in tube) from car batteries wired in series
+* Two 12 volt car batteries connected to charge controller and solar panels for remote powering
+* Miscelaneous wiring equipment
+
+![Configuration diagram for installation in creek](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTIC-InStream.png)
+
+![Video weir installed in Willow Creek](https://github.com/keaneflynn/LOTIC/blob/main/media/InstalledVideoWeir.jpg)
+
+![Video weir submersible tube placement](https://github.com/keaneflynn/LOTIC/blob/main/media/VideoWeir.jpeg)
+
+![LOTIC submersible tube component containing computer and camera](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTICtube.jpeg)
+
+![Lock box containing car batteries, excess wiring, and charge controller from solar panel](https://github.com/keaneflynn/LOTIC/blob/main/media/LockBox.jpg)
+
+![Solar panels placed 20 meters from lock box for better, direct sunlight](https://github.com/keaneflynn/LOTIC/blob/main/media/SolarPower.jpeg)
 
 
 ## Spec
