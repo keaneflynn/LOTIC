@@ -11,7 +11,7 @@ LOTIC performing salmonid identification on a tributary of the South Fork Eel Ri
 
 ![LOTIC performing adult salmonid identification on the mainstem Russian River](https://github.com/keaneflynn/LOTIC/blob/main/media/mirabelSample.GIF)
 
-LOTIC performing adult salmonid identification on the mainstem Russian River
+LOTIC performing adult salmonid identification on the mainstem Russian River (video courtesy of Sonoma Water)
 
 ## Necessary Hardware
 This currently makes use of the following hardware (however we intend to update it with whatever more efficient hardware becomes available):
@@ -30,15 +30,27 @@ This currently makes use of the following hardware (however we intend to update 
 
 ![Configuration diagram for installation in creek](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTIC-InStream.png)
 
+Configuration diagram for installation in creek
+
 ![Video weir installed in Willow Creek](https://github.com/keaneflynn/LOTIC/blob/main/media/InstalledVideoWeir.jpg)
+
+Video weir installed in Willow Creek
 
 ![Video weir submersible tube placement](https://github.com/keaneflynn/LOTIC/blob/main/media/VideoWeir.jpeg)
 
+Video weir submersible tube placement
+
 ![LOTIC submersible tube component containing computer and camera](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTICtube.png)
+
+LOTIC submersible tube component containing computer and camera
 
 ![Lock box containing car batteries, excess wiring, and charge controller from solar panel](https://github.com/keaneflynn/LOTIC/blob/main/media/LockBox.jpg)
 
+Lock box containing car batteries, excess wiring, and charge controller from solar panel
+
 ![Solar panels placed 20 meters from lock box for better, direct sunlight](https://github.com/keaneflynn/LOTIC/blob/main/media/SolarPower.jpeg)
+
+Solar panels placed 20 meters from lock box for better, direct sunlight
 
 
 ## Inference Specifications
