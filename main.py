@@ -29,7 +29,7 @@ def main():
 
     interpreter = Interpreter(
             model_path=args.model_file,
-            experimental_delegates=[load_delegate('libedgetpu.so.1.0')]
+            experimental_delegates=[load_delegate('libedgetpu.so.1.0')] # remove the load delegate if coral TPU is not being leveraged
             )
     interpreter.allocate_tensors()
 

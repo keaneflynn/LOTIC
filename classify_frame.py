@@ -51,9 +51,9 @@ class FrameClassifier:
                 classification.items += [Item(obj_name)]
 
                 #Drawing label (?)
-                labelSize, baseLine = cv2.getTextSize(obj_name, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 2)
+                labelSize, baseLine = cv2.getTextSize(obj_name, cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
                 label_ymin = max(ymin, labelSize[1] + 10)
                 cv2.rectangle(frame, (xmin, label_ymin-labelSize[1]-10), (xmin+labelSize[0], label_ymin+baseLine-10), (255, 255, 255), cv2.FILLED)
-                cv2.putText(frame, obj_name, (xmin, label_ymin-7), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
+                cv2.putText(frame, obj_name, (xmin, label_ymin-7), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
                 
         return classification
