@@ -21,6 +21,23 @@ This currently makes use of the following hardware (however we intend to update 
 * Google Coral TPU
 * Some additional storage unit (although a large capacity SD card in the RasPi should suffice)
 * Some sort of active cooling for CPU (imperative if raspi is overclocked)
+* Blue Robotics 4" tube (aluminum tube helps with cooling while submerged), clear face plate, potted back plate, and necessary sealing gaskets
+* Two waterproof cat 6 cables to run from battery storage box to submersed computer unit (used for powering and data transfer)
+* Buck Converter 24 volt to 5 volt 3 amp to power RasPi (wired in tube) from car batteries wired in series
+* Two 12 volt car batteries connected to charge controller and solar panels for remote powering
+* Miscelaneous wiring equipment
+
+![Configuration diagram for installation in creek](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTIC-InStream.png)
+
+![Video weir installed in Willow Creek](https://github.com/keaneflynn/LOTIC/blob/main/media/InstalledVideoWeir.jpg)
+
+![Video weir submersible tube placement](https://github.com/keaneflynn/LOTIC/blob/main/media/VideoWeir.jpeg)
+
+![LOTIC submersible tube component containing computer and camera](https://github.com/keaneflynn/LOTIC/blob/main/media/LOTICtube.jpeg)
+
+![Lock box containing car batteries, excess wiring, and charge controller from solar panel](https://github.com/keaneflynn/LOTIC/blob/main/media/LockBox.jpg)
+
+![Solar panels placed 20 meters from lock box for better, direct sunlight](https://github.com/keaneflynn/LOTIC/blob/main/media/SolarPower.jpeg)
 
 
 ## Spec
