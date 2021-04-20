@@ -1,4 +1,7 @@
-# LOTIC Introduction
+# LOTIC
+Open source code for fisheries research developed by Keane Flynn, Ryan Flynn, and Gabriel Rossi (2021)
+
+## Introduction
 Welcome to LOTIC (Lightweight Object Tracking Image Capturer)! This program has been designed for underwater use with a Tensorflow Lite object detection model to record out migrating juvenile salmonids, however with slight tweaks it can be reconfigured for any object detection project. The use of the following files and scripts will result in a Raspberry Pi computer that, on startup, will perform live object detection at over 20fps. The output from this object detection model is a video record with a bounding box around your object of interest with a timestamp as well as an additional  file containing time of first observation, species ID, duration in frame, and count of total observations. For ease of back-end data configuration, this file is output in .json format. 
 
 ## Example Output
