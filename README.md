@@ -77,6 +77,7 @@ $ python main.py -h
 - `classify_frame.py`: classification at frame level; used by `classify_video.py`
 - `classification.py`: classification for .json file output; used by `classify_frame.py` and `classify_video.py`
 - `models`: directory containing .tflite files (useful for testing)
+- `edgetpu_compiler`: directory containing shell script to run in Docker to convert .tflite files to edgetpu.tflite files
 - `lotic.service`: a service file to be placed in systemd of the RasPi to allow the program to run on boot or reboot on failure
 
 ## **Known Issue**
