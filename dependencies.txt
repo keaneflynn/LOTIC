@@ -1,0 +1,15 @@
+echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install python3-tflite-runtime
+
+for var1 in tflite opencv-python
+do
+yes | pip3 install $var1
+done
+
+
+for var2 in libcblas-dev libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev libqtgui4 libqt4-test python3-pycoral libedgetpu1-std
+do
+yes | sudo apt-get install $var2
+done
