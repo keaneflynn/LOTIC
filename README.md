@@ -6,7 +6,7 @@ Welcome to LOTIC (Lightweight Object Tracking Image Capturer)! This program has 
 
 
 ## **Example Output**
-![LOTIC performing salmonid identification on a tributary of the South Fork Eel River](https://github.com/keaneflynn/LOTIC/blob/main/media/fish.gif)
+![LOTIC performing salmonid identification on a tributary of the South Fork Eel River](https://github.com/keaneflynn/LOTIC/blob/main/media/juvFish.gif)
 
 *LOTIC performing salmonid identification on a tributary of the South Fork Eel River*
 
