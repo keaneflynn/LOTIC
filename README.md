@@ -10,6 +10,10 @@ Welcome to LOTIC (Lightweight Object Tracking Image Capturer)! This program has 
 
 *LOTIC performing salmonid identification on a tributary of the South Fork Eel River*
 
+![Yolo output image](https://github.com/keaneflynn/LOTIC/blob/main/media/yolo-output.png)
+
+*Output image from object detection using YOLOv4-tiny (support coming soon)*
+
 ![LOTIC performing adult salmonid identification on the mainstem Russian River](https://github.com/keaneflynn/LOTIC/blob/main/media/mirabelSample.GIF)
 
 *LOTIC performing adult salmonid identification on the mainstem Russian River (video courtesy of Sonoma Water)*
